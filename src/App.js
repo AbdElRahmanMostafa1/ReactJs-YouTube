@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import axios from 'axios';
 import './App.css';
+import Header from './components/App components/Header';
+import Video from './components/App components/Video';
+import Footer from './components/App components/Footer';
 
-function App() {
+const App = () => {
+  // Definig consts
+  const BASEURL = 'https://www.googleapis.com/youtube/v3/search';
+  const KEY = 'AIzaSyDjfve8M3Haw4z_z1u97rffvXzFF7Nd1og';
+
+  // Using States
+  const [renderedVideosDetails, setRenderedVideosDetails] = useState([]);
+
+  // Get Info
+  const SearchedText = async (text) => {
+    const responce = await axios.get(BASEURL, {
+      params: {
+        part: 'snippet',
+        maxResults: 15,
+        // order: 'date',
+        q: text,
+        key: KEY,
+      }
+    })
+    setRenderedVideosDetails(responce.data.items);
+    console.log(responce.data.items);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main className='main'>
+      <Header searchedText={SearchedText} />
+      <Video renderedVideos={renderedVideosDetails} />
+      <Footer />
+    </main>
+  )
 }
 
-export default App;
+export default App

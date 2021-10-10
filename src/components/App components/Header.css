@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 .5rem 1rem black;
+  border-radius: 0 0 1rem 1rem;
+  margin-bottom: 5rem;
+}
+
+.header > img {
+  width: 12.5rem;
+  cursor: pointer;
+}
+
+.input-search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  width: 50rem;
+}
+
+.input-search input {
+  flex: 1;
+  padding: 1rem;
+  height: 4.7rem;
+  font-size: 1.6rem;
+  transition: .3s;
+}
+
+.input-search input:focus {
+  border: .2rem solid rgb(0, 0, 255);
+}
+
+.clear-text {
+  padding: .5rem;
+  cursor: pointer;
+  height: 4.7rem;
+  border: none;
+  background-color: transparent;
+  display: none;
+}
+
+.clear-text.display {
+  display: inline;
+}
+
+.search-icon {
+  background-color: #ED4641;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  height: 4.7rem;
+}
+
+.search-icon > svg {
+  font-size: 2rem;
+
+}
+
+.search-icon > svg path {
+  fill: white;
+}

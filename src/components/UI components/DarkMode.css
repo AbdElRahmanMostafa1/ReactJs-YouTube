@@ -1,0 +1,27 @@
+.dark-mode {
+  width: 5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+  /*
+    Ratio Between the **dark-mode** & **dark-mode-slider** is 5/3
+  */
+
+.dark-mode-slider {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: wheat;
+  position: absolute;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.dark-mode-slider.dark {
+  transform: translateX(2.5rem);
+}

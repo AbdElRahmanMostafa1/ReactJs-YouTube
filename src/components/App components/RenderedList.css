@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+.single-video-detail {
+  display: flex;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: .3s;
+  margin: 1rem 5rem;
+}
+
+.single-video-detail:hover {
+  background-color: rgb(192, 192, 192);
+}
+
+.title-channel-views-time {
+  margin-left: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;;
+  align-items: flex-start;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+}
+
+.channel-name {
+  /* font-size: 1.6rem; */
+}
+
+@media (max-width: 1305px) {
+  .single-video-detail {
+    margin-top: 2rem;
+  }
+}
